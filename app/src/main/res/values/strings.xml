@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">MyMedia</string>
+    <string name="app_name">定制专属</string>
+    <string name="title_activity_splash">定制专属</string>
 </resources>

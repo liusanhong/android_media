@@ -10,11 +10,13 @@ import lq.com.mymedia.R;
 
 public class SplashActivity extends Activity {
 
+    Handler handler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        new Handler().postDelayed(new Runnable() {
+        handler = new Handler();
+        handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 startMainActivity();
@@ -39,5 +41,11 @@ public class SplashActivity extends Activity {
     private void startMainActivity() {
         startActivity(new Intent(this,MainActivity.class));
         finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        handler.removeCallbacksAndMessages(null);
+        super.onDestroy();
     }
 }
